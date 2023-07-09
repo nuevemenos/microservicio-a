@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  glassfish:
+    container_name: his-DEV-recupero4.2
+    image: dgsisan/his_recupero:4.2 
+    ports:
+      - 4848:4848
+      - 8080:8080
+      - 8181:8181
+    volumes:
+      - ./conf/domain.xml:/usr/local/glassfish3/glassfish/domains/domain1/config/domain.xml
+      - ./conf/instance1/domain.xml:/usr/local/glassfish3/glassfish/nodes/localhost-domain1/instance1/config/domain.xml
+      - ./conf/instance2/domain.xml:/usr/local/glassfish3/glassfish/nodes/localhost-domain1/instance2/config/domain.xml
+      - ./conf/instance3/domain.xml:/usr/local/glassfish3/glassfish/nodes/localhost-domain1/instance3/config/domain.xml
